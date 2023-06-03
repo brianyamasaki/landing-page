@@ -139,9 +139,6 @@
   #third {
     transform: translate(1250px, 340px);
   }
-  .centering {
-    text-align: center;
-  }
   .horizontal {
     display:flex;
     justify-content: space-between;
