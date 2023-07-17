@@ -1,11 +1,9 @@
 <script lang="ts">
 
-
 </script>
 
 <div>
   <div id="map">
-    <!-- <MB height={2200} width={4560} /> -->
     <div>
       <h1>Welcome to Yamasakidesign.com</h1>
     </div>
@@ -26,6 +24,8 @@
       <div id="third" class="nav-container">
         <h2>Design Studies</h2>
         <ul>
+          <li><a href="https://workout-buddy.yamasakidesign.com">Workout Buddy</a> - A simple application to keep track of your workout</li>
+          <li><a href="https://portfolio.yamasakidesign.com">A very old portfolio website of mine</a> - So 2014</li>
           <li><a href="https://motoshi-meets-shoko.yamasakidesign.com">1958 Week at a Glance</a> - How my father met my mother</li>
           <li><a href="https://workout-buddy.yamasakidesign.com">Workout Buddy</a> - Project for my nephew (he never finished it)</li>
         </ul>
@@ -40,6 +40,7 @@
     background-image: linear-gradient(0deg, #21D4FD 0%, #B721FF 100%);
     padding: 1rem;
     height: 100vh;
+    z-index: 5;
   }
   #nav-groups {
     display:flex;
