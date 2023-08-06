@@ -27,7 +27,6 @@
           <li><a href="https://workout-buddy.yamasakidesign.com">Workout Buddy</a> - A simple application to keep track of your workout</li>
           <li><a href="https://portfolio.yamasakidesign.com">A very old portfolio website of mine</a> - So 2014</li>
           <li><a href="https://motoshi-meets-shoko.yamasakidesign.com">1958 Week at a Glance</a> - How my father met my mother</li>
-          <li><a href="https://workout-buddy.yamasakidesign.com">Workout Buddy</a> - Project for my nephew (he never finished it)</li>
         </ul>
       </div>
     </div>
