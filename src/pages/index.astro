@@ -11,6 +11,10 @@ import Map from '../components/map.svelte';
 	</head>
 	<body>
 		<Map client:load />
+		<footer>
+			<p>&copy; Copyright - Brian Yamasaki</p>
+		</footer>
+
 	</body>
 </html>
 
@@ -18,10 +22,16 @@ import Map from '../components/map.svelte';
 <style lang="scss">
 	html {
 		height: 100%;
-		background-color: #21D4FD;
+		background-color: #271516;
 	}
 	body {
 		padding: 0;
 		margin: 0;
+	}
+	footer {
+		font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+		text-align: center;
+		color: white;
+		margin: 1rem;
 	}
 </style>

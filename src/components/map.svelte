@@ -5,7 +5,7 @@
 <div>
   <div id="map">
     <div>
-      <h1>Welcome to Yamasakidesign.com</h1>
+      <h1>Brian Yamasaki</h1>
     </div>
     <div id="nav-groups">
       <div id="first" class="nav-container">
@@ -22,11 +22,18 @@
         </ul>
       </div>
       <div id="third" class="nav-container">
-        <h2>Design Studies</h2>
+        <h2>Design Study Websites</h2>
         <ul>
           <li><a href="https://workout-buddy.yamasakidesign.com">Workout Buddy</a> - A simple application to keep track of your workout</li>
           <li><a href="https://portfolio.yamasakidesign.com">A very old portfolio website of mine</a> - So 2014</li>
           <li><a href="https://motoshi-meets-shoko.yamasakidesign.com">1958 Week at a Glance</a> - How my father met my mother</li>
+        </ul>
+      </div>
+      <div id="fourth" class="nav-container">
+        <h2>Designs</h2>
+        <ul>
+          <li><a href="https://nihirafamily.smugmug.com/Designs">Pamphlets, logos and cards</a> I have designed</li>
+          <li><a href="https://nihirafamily.smugmug.com/Christmas-cards/">My Family's Christmas Cards</a> &ndash; I love creating cards</li>
         </ul>
       </div>
     </div>
@@ -35,8 +42,8 @@
 
 <style lang="scss">
   #map {
-    background-color: #21D4FD;
-    background-image: linear-gradient(0deg, #21D4FD 0%, #B721FF 100%);
+    background-color: #F5AEC0;
+    background-image: linear-gradient(0deg, #271516 0%, #381953 50%, #F5AEC0 50%, #4C419F 100%);
     padding: 1rem;
     height: 100vh;
     z-index: 5;
@@ -49,9 +56,10 @@
     height: 80vh;
   }
   h1 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: white;
     text-align: center;
-    text-shadow: 1px 1px 2px red, 0 0 1em darkblue, 0 0 0.2em darkblue;
+    margin-top: 0;
   }
  .nav-container {
     background-color: rgba(255, 255, 255, 0.7);
@@ -66,6 +74,13 @@
     }
     &:nth-of-type(even) {
       align-self: flex-end;
+    }
+    &#first {
+      // background-image: url(/assets/cloud-1.svg);
+      background-repeat: no-repeat;
+      background-size: 50vw;
+      max-width: 600px;
+      padding: 1rem 0;
     }
     h2 {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
