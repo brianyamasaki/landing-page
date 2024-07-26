@@ -36,6 +36,12 @@
           <li><a href="https://nihirafamily.smugmug.com/Christmas-cards/">My Family's Christmas Cards</a> &ndash; I love creating cards</li>
         </ul>
       </div>
+      <div id="fifth" class="nav-container">
+        <h2>Experiments</h2>
+        <ul>
+          <li><a href="https://tree-regions.yamasakidesign.com">Geolocation API experiment</a></li>
+        </ul>
+      </div>
     </div>
   </div>
 </div>
@@ -53,6 +59,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+    max-width: 75rem;
+    margin: auto;
     height: 80vh;
   }
   h1 {
@@ -74,13 +82,6 @@
     }
     &:nth-of-type(even) {
       align-self: flex-end;
-    }
-    &#first {
-      // background-image: url(/assets/cloud-1.svg);
-      background-repeat: no-repeat;
-      background-size: 50vw;
-      max-width: 600px;
-      padding: 1rem 0;
     }
     h2 {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
