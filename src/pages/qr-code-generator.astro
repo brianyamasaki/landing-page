@@ -1,0 +1,59 @@
+---
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+import UrlInfo from '../components/Url-info';
+import WifiInfo from '../components/Wifi-info';
+import EmailInfo from '../components/Email-info';
+import GeoInfo from '../components/Geo-info';
+
+import Footer from '../components/Footer.astro';
+
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width">
+		<title>QR Code Generator</title>
+	</head>
+	<body>
+    <Tabs>
+      <TabItem label="Website URL">
+				<UrlInfo client:idle/>
+			</TabItem>
+      <TabItem label="WiFi Connection">
+				<WifiInfo client:idle />
+			</TabItem>
+			<TabItem label="Email">
+				<EmailInfo client:idle />
+			</TabItem>
+			<TabItem label="GPS Coordinates">
+				<GeoInfo client:idle />
+			</TabItem>
+    </Tabs>
+		
+		<Footer />
+
+	</body>
+</html>
+
+<style lang="scss" is:global>
+	html {
+		height: 100%;
+	}
+	starlight-tabs  {
+		max-width: 50rem;
+		margin:auto;
+		li a {
+			font-size:1.3rem;
+			border-top-left-radius: 1rem;
+			border-top-right-radius: 1rem;
+			border: 1px solid black;
+			padding-top: 0.5rem;
+		}
+	}
+	body {
+		padding: 0;
+		margin: 0;
+	}
+</style>

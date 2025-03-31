@@ -1,5 +1,6 @@
 ---
 import Map from '../components/map.svelte';
+import Footer from '../components/Footer.astro';
 ---
 
 <html lang="en">
@@ -11,10 +12,7 @@ import Map from '../components/map.svelte';
 	</head>
 	<body>
 		<Map client:load />
-		<footer>
-			<p>&copy; Copyright 2024 - Brian Yamasaki</p>
-		</footer>
-
+		<Footer />
 	</body>
 </html>
 
@@ -27,11 +25,5 @@ import Map from '../components/map.svelte';
 	body {
 		padding: 0;
 		margin: 0;
-	}
-	footer {
-		font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-		text-align: center;
-		color: white;
-		margin: 1rem;
 	}
 </style>
