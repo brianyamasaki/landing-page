@@ -7,11 +7,19 @@ type Props = {
 }
 
 const QRcode = ({qrText}: Props) => {
+
+  const renderCode = () => {
+    if (!qrText) return <div />;
+    return (
+      <div className="quiet-area">
+        {qrText ? <QRCodeSVG value={qrText} /> : <span />}
+        <p>
+          This QR code represents the text string <span>{qrText}</span>
+        </p>
+      </div>
+    );
+  }
   
-  return (
-    <div className="quiet-area">
-      {qrText ? <QRCodeSVG value={qrText} /> : <span />}
-    </div>
-  )
+  return renderCode();
 }
 export default QRcode;
