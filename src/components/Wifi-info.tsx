@@ -35,15 +35,15 @@ const WifiInfo = () => {
         <div className="formGroup">
           <h4>Encryption Type</h4>
           <label>
-            <input type="radio" name="cypher" id="" checked={cypher === strNoPassword} onChange={() => setCypher(strNoPassword)}/>
+            <input type="radio" name="cypher" checked={cypher === strNoPassword} onChange={() => setCypher(strNoPassword)}/>
             None
           </label>
           <label>
-            <input type="radio" name="cypher" id="" checked={cypher === strWpa} onChange={() => setCypher(strWpa)}/>
+            <input type="radio" name="cypher" checked={cypher === strWpa} onChange={() => setCypher(strWpa)}/>
             WPA / WPA2
           </label>
           <label>
-            <input type="radio" name="cypher" id="" checked={cypher === strWEP} onChange={() => setCypher(strWEP)}/>
+            <input type="radio" name="cypher" checked={cypher === strWEP} onChange={() => setCypher(strWEP)}/>
             WEP
           </label>
         </div>
@@ -57,7 +57,7 @@ const WifiInfo = () => {
         </div>
         <div className="formGroup">
           <label>
-            <input type="checkbox" name="" id="" checked={isHidden} onChange={(e:React.ChangeEvent<HTMLInputElement>) => setIsHidden(e.target.checked)}/>
+            <input type="checkbox" checked={isHidden} onChange={(e:React.ChangeEvent<HTMLInputElement>) => setIsHidden(e.target.checked)}/>
             Check if hidden network
           </label>
         </div>

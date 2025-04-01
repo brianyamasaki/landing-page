@@ -27,7 +27,7 @@ const UrlInfo = () => {
         <legend>Choose Options</legend>
         <div className="formGroup">
           <label>
-            <input type="checkbox" name="" id="" checked={useSecure} onChange={(e:React.ChangeEvent<HTMLInputElement>) => setUseSecure(e.target.checked)}/>
+            <input type="checkbox" checked={useSecure} onChange={(e:React.ChangeEvent<HTMLInputElement>) => setUseSecure(e.target.checked)}/>
             Use HTTPS (try using this checked first, if it doesn't work, try unchecking this box)
           </label>
         </div>

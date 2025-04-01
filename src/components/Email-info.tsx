@@ -32,7 +32,7 @@ const EmailInfo = () => {
         </div>
         <div className="formGroup">
           <label htmlFor="subject">Subject: </label>
-          <input id="subject" type="text" value={subject} onChange={onChangeSubject} placeholder=""/>
+          <input id="subject" type="text" value={subject} onChange={onChangeSubject} />
         </div>
         <div className="formGroup">
           <label>
