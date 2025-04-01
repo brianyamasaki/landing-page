@@ -32,7 +32,7 @@ const WifiInfo = () => {
     <div className="info-pane">
       <fieldset>
         <legend>Choose Options</legend>
-        <div>
+        <div className="formGroup">
           <h4>Encryption Type</h4>
           <label>
             <input type="radio" name="cypher" id="" checked={cypher === strNoPassword} onChange={() => setCypher(strNoPassword)}/>
@@ -47,15 +47,15 @@ const WifiInfo = () => {
             WEP
           </label>
         </div>
-        <div>
+        <div className="formGroup">
           <label htmlFor="name">Network Name: </label>
           <input id="name" type="text" value={name} onChange={onChangeNameText} placeholder="Network Name"/>
         </div>
-        <div>
+        <div className="formGroup">
           <label htmlFor="password">Network Password: </label>
           <input id="password" type="text" value={password} onChange={onChangePassword} placeholder="Password"/>
         </div>
-        <div>
+        <div className="formGroup">
           <label>
             <input type="checkbox" name="" id="" checked={isHidden} onChange={(e:React.ChangeEvent<HTMLInputElement>) => setIsHidden(e.target.checked)}/>
             Check if hidden network

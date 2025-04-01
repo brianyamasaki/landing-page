@@ -16,20 +16,24 @@ const UrlInfo = () => {
     if (text.match(regExHttp)) return text;
     return useSecure ? `https://${text}` : `http://${text}`;
   }
+  const onSubmit = (e:React.ChangeEvent<HTMLButtonElement>) => {
+    setQrText(ensureHttp(urlText));
+    e.preventDefault();
+  }
   
   return (
     <div className="info-pane">
       <fieldset>
         <legend>Choose Options</legend>
-        <div>
+        <div className="formGroup">
           <label>
             <input type="checkbox" name="" id="" checked={useSecure} onChange={(e:React.ChangeEvent<HTMLInputElement>) => setUseSecure(e.target.checked)}/>
-            Use HTTPS
+            Use HTTPS (try using this checked first, if it doesn't work, try unchecking this box)
           </label>
         </div>
-        <div>
+        <div className="formGroup">
           <label htmlFor="urlText">Web address: </label>
-          <input id="urlText" type="text" value={urlText} onChange={onChangeUrlText} placeholder="like https://google.com"/>
+          <input id="urlText" type="text" value={urlText} onChange={onChangeUrlText} placeholder="google.com or apple.com"/>
         </div>
         <button onClick={() => setQrText(ensureHttp(urlText))} disabled={!urlText}>Generate QR Code</button>
       </fieldset>

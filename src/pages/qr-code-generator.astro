@@ -17,21 +17,32 @@ import Footer from '../components/Footer.astro';
 		<title>QR Code Generator</title>
 	</head>
 	<body>
-    <Tabs>
-      <TabItem label="Website URL">
-				<UrlInfo client:idle/>
-			</TabItem>
-      <TabItem label="WiFi Connection">
-				<WifiInfo client:idle />
-			</TabItem>
-			<TabItem label="Email">
-				<EmailInfo client:idle />
-			</TabItem>
-			<TabItem label="GPS Coordinates">
-				<GeoInfo client:idle />
-			</TabItem>
-    </Tabs>
-		
+		<main>
+			<h1>Create Your Own QR Code</h1>
+			<p>
+				Many "free" QR code generator websites require you to pay for memberships or create QR codes that go through their website
+				and monitor all traffic going to your QR code. Sometimes that's OK, but why would you put up with that when you can create 
+				a real QR Code with no tricks or scams.
+			</p>
+			<p>
+				All QR codes are generated using <a href="https://github.com/zpao/qrcode.react">the open source library qrcode.react</a> and this relies 
+				on the <a href="http://www.nayuki.io/page/qr-code-generator-library">Project Nayuki source code</a> as of early 2025. 
+			</p>
+	    <Tabs>
+	      <TabItem label="Website URL">
+					<UrlInfo client:idle/>
+				</TabItem>
+	      <TabItem label="WiFi Connection">
+					<WifiInfo client:idle />
+				</TabItem>
+				<TabItem label="Email">
+					<EmailInfo client:idle />
+				</TabItem>
+				<TabItem label="GPS Coordinates">
+					<GeoInfo client:idle />
+				</TabItem>
+	    </Tabs>
+		</main>
 		<Footer />
 
 	</body>
@@ -40,20 +51,91 @@ import Footer from '../components/Footer.astro';
 <style lang="scss" is:global>
 	html {
 		height: 100%;
-	}
-	starlight-tabs  {
-		max-width: 50rem;
-		margin:auto;
-		li a {
-			font-size:1.3rem;
-			border-top-left-radius: 1rem;
-			border-top-right-radius: 1rem;
-			border: 1px solid black;
-			padding-top: 0.5rem;
-		}
+		background: rgb(9,9,121);
+		background: url('assets/small-space-needle.png'), linear-gradient(140deg, rgba(43,10,103,1) 0%, rgba(9,9,121,1) 33%, rgba(0,170,204,1) 100%);
+		color: white;
+		background-repeat: no-repeat;
+		background-position:  bottom right, top left ;
 	}
 	body {
 		padding: 0;
 		margin: 0;
+	}
+	main {
+		max-width: 50rem;
+		margin: auto;
+	}
+	h1 {
+		text-align: center;
+	}
+	p {
+		font-size: 1.3rem;
+		a {
+			color: rgb(250, 207, 207)
+		}
+	}
+
+	starlight-tabs  {
+		max-width: 50rem;
+		margin:auto;
+		ul {
+			margin-bottom: 0;
+			overflow: hidden;
+		}
+		li {
+			a {
+				
+				font-size:1.3rem;
+				border-top-left-radius: 1rem;
+				border-top-right-radius: 1rem;
+				border: 1px solid black;
+				padding-top: 0.5rem !important;
+				padding-bottom: 0.5rem !important;
+				background-color: rgb(159, 166, 241);
+				color: black !important;
+			}
+			a[aria-selected=true] {
+				background-color: rgb(213, 237, 250)
+			}
+		}
+		div[role=tabpanel] {
+			margin: 0 !important;
+		}
+	}
+	.formGroup {
+		margin-bottom: 1rem;
+	}
+	.info-pane {
+		background: rgb(213, 237, 250);
+		color: black;
+		padding: 0.5rem;
+	}
+	input[type=checkbox] {
+		margin:0.5rem 1rem 1rem 0;
+	}
+	input[type=text] {
+		margin:0.5rem 0;
+		padding:0.5rem;
+		border-radius: 0.5rem;
+		width:90%;
+	}
+	input[type=radio] {
+		margin:0 1rem 0 0.5rem;
+	}
+	input[type=submit],
+	button {
+		padding:0.5rem;
+		border-radius: 0.5rem;	
+	}
+	textarea {
+		width: 90%;
+		min-height: 3rem;
+		padding:0.5rem;
+		border-radiu:0.5rem;
+	}
+	h4 {
+		text-align: center;
+		margin:0;
+		font-size: 1.3rem;
 	}
 </style>

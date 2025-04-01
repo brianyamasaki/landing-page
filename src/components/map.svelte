@@ -39,7 +39,7 @@
       <div id="fifth" class="nav-container">
         <h2>Experiments</h2>
         <ul>
-          <li><a href="https://tree-regions.yamasakidesign.com">Geolocation API experiment</a></li>
+          <li><a href="/qr-code-generator">Safely Create QR Codes</a> - Free forever QR codes, No scams, no fees</li>
         </ul>
       </div>
     </div>

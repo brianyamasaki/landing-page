@@ -26,15 +26,15 @@ const EmailInfo = () => {
     <div className="info-pane">
       <fieldset>
         <legend>Choose Options</legend>
-        <div>
+        <div className="formGroup">
           <label htmlFor="name">Email Address to send to: </label>
           <input id="name" type="text" value={name} onChange={onChangeNameText} placeholder="Email"/>
         </div>
-        <div>
+        <div className="formGroup">
           <label htmlFor="subject">Subject: </label>
           <input id="subject" type="text" value={subject} onChange={onChangeSubject} placeholder=""/>
         </div>
-        <div>
+        <div className="formGroup">
           <label>
           Email Message Body:
           <textarea value={message} onChange={onChangeMessage} />

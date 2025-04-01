@@ -2,8 +2,8 @@ import { useState } from "react";
 import QRcode from './Qrcode';
 
 const GeoInfo = () => {
-  const [lat, setLat] = useState(47.60747470198598);
-  const [lng, setLng] = useState(-122.19037949812797);
+  const [lat, setLat] = useState(0);
+  const [lng, setLng] = useState(0);
   const [qrText, setQrText] = useState("");
   
   const onChangeLat = (e:React.ChangeEvent<HTMLInputElement>) => {
@@ -21,13 +21,13 @@ const GeoInfo = () => {
     <div className="info-pane">
       <fieldset>
         <legend>Choose Options</legend>
-        <div>
+        <div className="formGroup">
           <label htmlFor="name">Latitude: </label>
-          <input id="name" type="number" value={lat} onChange={onChangeLat} placeholder="Email"/>
+          <input id="name" type="number" value={lat} onChange={onChangeLat} placeholder="Latitude"/>
         </div>
-        <div>
+        <div className="formGroup">
           <label htmlFor="subject">Longitude: </label>
-          <input id="subject" type="number" value={lng} onChange={onChangeLng} placeholder=""/>
+          <input id="subject" type="number" value={lng} onChange={onChangeLng} placeholder="Longitude"/>
         </div>
         <button onClick={() => setQrText(createWifiString())} disabled={!lat || !lng}>Generate QR Code</button>
       </fieldset>
