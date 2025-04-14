@@ -1,10 +1,12 @@
 import { useState } from "react";
 import QRcode from './Qrcode';
+import SizeInfo from './Size-info';
 
 const EmailInfo = () => {
   const [name, setName] = useState("");
   const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
+  const [size, setSize] = useState(128);
   const [qrText, setQrText] = useState("");
   
   const onChangeNameText = (e:React.ChangeEvent<HTMLInputElement>) => {
@@ -28,7 +30,7 @@ const EmailInfo = () => {
         <legend>Choose Options</legend>
         <div className="formGroup">
           <label htmlFor="name">Email Address to send to: </label>
-          <input id="name" type="text" value={name} onChange={onChangeNameText} placeholder="Email"/>
+          <input id="name" type="text" value={name} onChange={onChangeNameText} placeholder="Email address"/>
         </div>
         <div className="formGroup">
           <label htmlFor="subject">Subject: </label>
@@ -40,9 +42,10 @@ const EmailInfo = () => {
           <textarea value={message} onChange={onChangeMessage} />
           </label>
         </div>
+        <SizeInfo returnSize={setSize} />
         <button onClick={() => setQrText(createWifiString())} disabled={!name}>Generate QR Code</button>
       </fieldset>
-      <QRcode qrText={qrText} />
+      <QRcode qrText={qrText} size={size} />
     </div>
   )
 }

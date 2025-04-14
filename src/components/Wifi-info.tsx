@@ -1,5 +1,6 @@
 import { useState } from "react";
 import QRcode from './Qrcode';
+import SizeInfo from './Size-info';
 
 
 const strNoPassword = "nopass";
@@ -12,6 +13,8 @@ const WifiInfo = () => {
   const [password, setPassword] = useState("");
   const [cypher, setCypher] = useState(strWpa);
   const [qrText, setQrText] = useState("");
+  const [size, setSize] = useState(128);
+
   
   const onChangeNameText = (e:React.ChangeEvent<HTMLInputElement>) => {
     setQrText("");
@@ -26,7 +29,7 @@ const WifiInfo = () => {
     setCypher(cypher);
   }
 
-  const createWifiString = () => (`WIFI:T:${cypher};S:${name};P;${password};H:${isHidden ? 'true' : 'false'}`)
+  const createWifiString = () => (`WIFI:T:${cypher};S:${name};P:${password};${isHidden ? 'H:true;' : ';'}`)
   
   return (
     <div className="info-pane">
@@ -61,9 +64,12 @@ const WifiInfo = () => {
             Check if hidden network
           </label>
         </div>
+        <div className="formGroup">
+          <SizeInfo returnSize={setSize} />
+        </div>
         <button onClick={() => setQrText(createWifiString())} disabled={!name || (cypher !== strNoPassword && !password)}>Generate QR Code</button>
       </fieldset>
-      <QRcode qrText={qrText} />
+      <QRcode qrText={qrText} size={size} />
     </div>
   )
 }

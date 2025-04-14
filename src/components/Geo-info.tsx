@@ -1,9 +1,11 @@
 import { useState } from "react";
 import QRcode from './Qrcode';
+import SizeInfo from "./Size-info";
 
 const GeoInfo = () => {
   const [lat, setLat] = useState(0);
   const [lng, setLng] = useState(0);
+  const [size, setSize] = useState(128);
   const [qrText, setQrText] = useState("");
   
   const onChangeLat = (e:React.ChangeEvent<HTMLInputElement>) => {
@@ -30,8 +32,9 @@ const GeoInfo = () => {
           <input id="subject" type="number" value={lng} onChange={onChangeLng} placeholder="Longitude"/>
         </div>
         <button onClick={() => setQrText(createWifiString())} disabled={!lat || !lng}>Generate QR Code</button>
+        <SizeInfo returnSize={setSize} />
       </fieldset>
-      <QRcode qrText={qrText} />
+      <QRcode qrText={qrText} size={size} />
     </div>
   )
 }
