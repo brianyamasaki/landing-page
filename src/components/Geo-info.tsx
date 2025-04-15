@@ -22,7 +22,7 @@ const GeoInfo = () => {
   return (
     <div className="info-pane">
       <fieldset>
-        <legend>Choose Options</legend>
+        <legend>Enter Latitude and Longitude in Degrees</legend>
         <div className="formGroup">
           <label htmlFor="name">Latitude: </label>
           <input id="name" type="number" value={lat} onChange={onChangeLat} placeholder="Latitude"/>

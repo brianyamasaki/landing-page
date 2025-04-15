@@ -33,7 +33,7 @@ import Footer from '../components/Footer.astro';
 	      <TabItem label="Website URL">
 					<UrlInfo client:idle/>
 				</TabItem>
-	      <TabItem label="WiFi Connection">
+	      <TabItem label="WiFi">
 					<WifiInfo client:idle />
 				</TabItem>
 				<TabItem label="Email">
@@ -117,7 +117,8 @@ import Footer from '../components/Footer.astro';
 	input[type=checkbox] {
 		margin:0.5rem 1rem 1rem 0;
 	}
-	input[type=text] {
+	input[type=text],
+	input[type=number] {
 		margin:0.5rem 0;
 		padding:0.5rem;
 		border-radius: 0.5rem;

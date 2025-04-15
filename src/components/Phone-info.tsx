@@ -19,8 +19,8 @@ const PhoneInfo = () => {
   return (
     <div className="info-pane">
       <fieldset>
+        <legend>Enter Phone Number</legend>
         <div className="formGroup">
-          <label htmlFor="phoneText">Phone number: </label>
           <input id="phoneText" type="text" value={phoneNumber} onChange={onChangePhoneNumber} placeholder="Enter phone number"/>
         </div>
         <div className="formGroup">
