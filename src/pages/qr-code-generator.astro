@@ -4,6 +4,7 @@ import UrlInfo from '../components/Url-info';
 import WifiInfo from '../components/Wifi-info';
 import EmailInfo from '../components/Email-info';
 import PhoneInfo from '../components/Phone-info';
+import VCardInfo from '../components/Vcard-info';
 import GeoInfo from '../components/Geo-info';
 
 import Footer from '../components/Footer.astro';
@@ -35,6 +36,9 @@ import Footer from '../components/Footer.astro';
 				</TabItem>
 	      <TabItem label="WiFi">
 					<WifiInfo client:idle />
+				</TabItem>
+	      <TabItem label="Contact Card">
+					<VCardInfo client:idle />
 				</TabItem>
 				<TabItem label="Email">
 					<EmailInfo client:idle />
