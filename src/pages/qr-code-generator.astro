@@ -3,6 +3,7 @@ import { Tabs, TabItem } from '@astrojs/starlight/components';
 import UrlInfo from '../components/Url-info';
 import WifiInfo from '../components/Wifi-info';
 import EmailInfo from '../components/Email-info';
+import PhoneInfo from '../components/Phone-info';
 import GeoInfo from '../components/Geo-info';
 
 import Footer from '../components/Footer.astro';
@@ -38,7 +39,10 @@ import Footer from '../components/Footer.astro';
 				<TabItem label="Email">
 					<EmailInfo client:idle />
 				</TabItem>
-				<TabItem label="GPS Coordinates">
+				<TabItem label="Phone Number">
+					<PhoneInfo client:idle />
+				</TabItem>
+				<TabItem label="Location">
 					<GeoInfo client:idle />
 				</TabItem>
 	    </Tabs>
