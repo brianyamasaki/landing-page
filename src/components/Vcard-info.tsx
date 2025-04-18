@@ -2,7 +2,7 @@ import { useState } from "react";
 import QRcode from './Qrcode';
 import SizeInfo from './Size-info';
 
-const vcardStart = `BEGIN:VCARD\nVERSION:3.0\n`;
+const vcardStart = `BEGIN:VCARD\nVERSION:4.0\n`;
 const vcardEnd = 'END:VCARD';
 
 const VcardInfo = () => {
@@ -10,6 +10,7 @@ const VcardInfo = () => {
   const [lname, setLName] = useState("");
   const [title, setTitle] = useState("");
   const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
   const [org, setOrg] = useState("");
   const [size, setSize] = useState(128);
   const [qrText, setQrText] = useState("");
@@ -25,6 +26,10 @@ const VcardInfo = () => {
   const onChangeSubject = (e:React.ChangeEvent<HTMLInputElement>) => {
     setQrText("");
     setTitle(e.target.value);
+  }
+  const onChangePhone = (e:React.ChangeEvent<HTMLInputElement>) => {
+    setQrText("");
+    setPhone(e.target.value);
   }
   const onChangeEmail = (e:React.ChangeEvent<HTMLInputElement>) => {
     setQrText("");
@@ -49,13 +54,18 @@ const VcardInfo = () => {
     return `EMAIL:${email}\n`;
   }
 
+  const phoneString = (): string => {
+    if (!phone) return '';
+    return `TEL:${phone}\n`;
+  }
+
   const orgString = (): string => {
     if (!org) return '';
     return `ORG:${org}\n`
   }
 
   const vcardString = (): string => {
-    return `${vcardStart}${nameString()}${titleString()}${emailString()}${orgString()}${vcardEnd}`;
+    return `${vcardStart}${nameString()}${titleString()}${emailString()}${phoneString()}${orgString()}${vcardEnd}`;
   }
   
   return (
@@ -70,6 +80,9 @@ const VcardInfo = () => {
         </div>
         <div className="formGroup">
           <input id="subject" type="text" value={title} onChange={onChangeSubject} placeholder="Job Title"/>
+        </div>
+        <div className="formGroup">
+          <input type="text" value={phone} onChange={onChangePhone} placeholder="Phone Number" />
         </div>
         <div className="formGroup">
           <input type="text" value={email} onChange={onChangeEmail} placeholder="Email Address" />
